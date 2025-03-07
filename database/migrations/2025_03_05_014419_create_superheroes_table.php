@@ -15,8 +15,11 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('universe_id');
             $table->foreign('universe_id')->references('id')->on('universe');
+            $table->unsignedBigInteger('gender_id');
+            $table->foreign('gender_id')->references('id')->on('genere');
             $table->string('name', 50);
             $table->string('real_name', 50);
+            $table->string('picture');
             $table->timestamps();
         });
     }

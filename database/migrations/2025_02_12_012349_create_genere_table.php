@@ -13,11 +13,7 @@ return new class extends Migration
     {
         Schema::create('genere', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('universe_id');
-            $table->foreign('universe_id')->references('id')->on('universe');
-            $table->unsignedBigInteger('superheroe_id');
-            $table->foreign('superheroe_id')->references('id')->on('superheroes');
-            $table->string('gender', 6);
+            $table->string('gender');
             $table->timestamps();
         });
     }

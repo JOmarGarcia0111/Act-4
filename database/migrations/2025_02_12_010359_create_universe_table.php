@@ -14,8 +14,6 @@ return new class extends Migration
         Schema::create('universe', function (Blueprint $table) {
             $table->id();
             $table->string('name',50);
-            $table->string('created-at',50);
-            $table->string('updated-at',50);
             $table->timestamps();
         });
     }

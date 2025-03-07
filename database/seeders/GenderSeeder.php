@@ -14,8 +14,13 @@ class GenderSeeder extends Seeder
     public function run(): void
     {
         Gender::create([
-            'name'=>'Male','Female','Other',
-
+            'gender'=>'Male'
+        ]);
+        Gender::create([
+            'gender'=>'Female'
+        ]);
+        Gender::create([
+            'gender'=>'Other'
         ]);
     }
 }
