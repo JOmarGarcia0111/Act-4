@@ -12,6 +12,16 @@ class Superheroe extends Model
         'gender_id',
         'universe_id',
         'name',
+        'real_name',
         'picture'
     ];
+    public function gender()
+    {
+        return $this->belongsTo(Gender::class);
+    }
+
+    public function universe()
+    {
+        return $this->belongsTo(Universe::class);
+    }
 }

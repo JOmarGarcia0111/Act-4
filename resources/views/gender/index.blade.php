@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Superhero List</title>
+    <title>Gender List</title>
 </head>
 <body>
-    <h1>Superheroes</h1>
+    <h1>Genres</h1>
 
-    <a href="{{ route('superheroe.create') }}">
-        <button>Create New Superhero</button>
+    <a href="{{ route('gender.create') }}">
+        <button>Create New Gender</button>
     </a>
     
     <br><br>
@@ -22,21 +22,21 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($superheroe as $item)
+            @foreach ($gender as $item)
                 <tr>
                     <td>{{ $item->id }}</td>
-                    <td>{{ $item->name }}</td>
+                    <td>{{ $item->gender }}</td>
                     <td>
     
-                        <a href="{{ route('superheroe.edit', $item->id) }}">
+                        <a href="{{ route('gender.edit', $item->id) }}">
                             <button>Edit</button>
                         </a>
 
-                        <a href="{{ route('superheroe.show', $item->id) }}">
+                        <a href="{{ route('gender.show', $item->id) }}">
                             <button>Show</button>
                         </a>
 
-                        <form action="{{ route('superheroe.destroy', $item->id) }}" method="POST" style="display:inline;">
+                        <form action="{{ route('gender.destroy', $item->id) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')
                             <button type="submit" onclick="return confirm('Are you sure?')">Delete</button>

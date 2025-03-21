@@ -30,11 +30,21 @@ class UniverseController extends Controller
     }
 
     public function edit (string $id){
+        $universe = Universe::find($id);
+
+        return view ('universe.edit',compact('universe'));
     }
 
     public function update (Request $request,string $id){
+        $universe = Universe::find($id);
+        $universe -> update([
+            'name' => $request->name,
+        ]);
+        return to_route('universe.show', $universe->id);
     }
 
-    public function destroy (string $id){
+    public function destroy (Universe $universe){
+        $universe->delete();
+        return redirect()->route('universe.index')->with('success', 'Universo eliminado correctamente.');
     }
 }

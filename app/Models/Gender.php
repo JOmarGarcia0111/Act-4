@@ -7,4 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Gender extends Model
 {
     protected $table = 'genere';
+    protected $fillable=[
+        'gender'
+    ];
 }
+

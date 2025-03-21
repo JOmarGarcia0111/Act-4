@@ -14,6 +14,8 @@
         <input typ="text" name="name">
 
         <input type="submit" value="Create Universe">
+        <br><br>
+        <a href="{{ route('universe.index') }}">Back to list</a>
     </form>
 
     
