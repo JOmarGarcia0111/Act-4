@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Universe List</title>
-</head>
-<body>
+@extends('layouts.main')
+
+@section('title', 'Universe List')
+
+@section('content')
     <h1>Universes</h1>
 
     <a href="{{ route('universe.create') }}">
@@ -46,5 +43,4 @@
             @endforeach
         </tbody>
     </table>
-</body>
-</html>
+@endsection

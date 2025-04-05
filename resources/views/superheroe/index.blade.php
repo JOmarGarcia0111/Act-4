@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Superhero List</title>
-</head>
-<body>
+@extends('layouts.main')
+
+@section('title', 'Superhero List')
+
+@section('content')
     <h1>Superheroes</h1>
 
     <a href="{{ route('superheroe.create') }}">
@@ -18,6 +15,7 @@
             <tr>
                 <th>Id</th>
                 <th>Name</th>
+                <th>Universe</th> 
                 <th>Actions</th> 
             </tr>
         </thead>
@@ -26,8 +24,8 @@
                 <tr>
                     <td>{{ $item->id }}</td>
                     <td>{{ $item->name }}</td>
+                    <td>{{ $item->universe->name ?? 'No Universe' }}</td> 
                     <td>
-    
                         <a href="{{ route('superheroe.edit', $item->id) }}">
                             <button>Edit</button>
                         </a>
@@ -46,5 +44,4 @@
             @endforeach
         </tbody>
     </table>
-</body>
-</html>
+@endsection
